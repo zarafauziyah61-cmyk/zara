@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Family Tree Lengkap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace, sans-serif;
+      background: #fdfdfd;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d831cd;
+    }
+
+    .tree {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .node {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 2px solid #d434d6;
+      border-radius: 8px;
+      background: #fff0f6;
+      color: #333;
+      font-weight: bold;
+      min-width: 140px;
+      text-align: center;
+    }
+
+    .level {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .horizontal-line {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #d29bdb;
+      z-index: -1;
+    }
+
+    .vertical-line {
+      width: 2px;
+      height: 20px;
+      background: #d487d9;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Visualisasi Family Tree Lengkap</h1>
+
+  <div class="tree">
+    <div>
+      <!-- Kakek Buyut -->
+      <div class="level">
+        <div class="node">Rapen Santirta (Kakek Buyut)</div>
+      </div>
+      <div class="vertical-line"></div>
+
+      <!-- Kakek -->
+      <div class="level">
+        <div class="node">Andjasmoroe Dayus (Kakek)</div>
+      </div>
+      <div class="vertical-line"></div>
+
+      <!-- Ayah & Ibu sejajar -->
+      <div class="level">
+        <div class="horizontal-line"></div>
+        <div class="node">Ayah: Hendra</div>
+        <div style="width: 60px;"></div>
+        <div class="node">Ibu: Ani</div>
+      </div>
+      <div class="vertical-line"></div>
+
+      <!-- Anak -->
+      <div class="level">
+        <div class="node">Zahra Hamdan Fauziyah (Aku)</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

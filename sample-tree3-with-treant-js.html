@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Family Tree dengan Treant.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Treant CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.css"
+    />
+
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace;
+        background: #f4f4f4;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      #tree {
+        width: 100%;
+        height: 600px;
+        margin-top: 30px;
+      }
+
+      .node {
+        border: 1px solid #e5becd;
+        border-radius: 6px;
+        padding: 8px;
+        background: #e1b9c9;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Visualisasi Family Tree (Treant.js)</h1>
+
+    <div id="tree"></div>
+
+    <!-- Raphael.js (dependency Treant) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
+
+    <!-- Treant.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/treant-js/1.0/Treant.min.js"></script>
+
+    <script>
+      const chartConfig = {
+        chart: {
+          container: "#tree",
+          rootOrientation: "NORTH",
+          nodeAlign: "CENTER",
+          connectors: { type: "step" },
+          node: { HTMLclass: "node" },
+        },
+
+        nodeStructure: {
+          text: { name: "Andjasmoroe Dayus + Amijah Siti", title: "Kakek Buyut & Nenek Buyut" },
+          children: [
+            {
+              text: { name: "Adang", title: "Kakek" },
+              children: [
+                {
+                  text: { name: "Hendra + Ani", title: "Ayah & Ibu" },
+                  children: [
+                    {
+                      text: { name: "Zahra Hamdan Fauziyah", title: "Anak" },
+                    },
+                  ],
+                },
+                {
+                  text: { name: "Ahmad Satibi", title: "Paman" },
+                },
+              ],
+            },
+          ],
+        },
+      };
+
+      new Treant(chartConfig);
+    </script>
+  </body>
+</html>

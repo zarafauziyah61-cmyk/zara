@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sample Family Tree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      body {
+        font-family: 'Courier New', Courier, monospace, sans-serif;
+        background: #e8abdd;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .tree {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+      }
+
+      .level {
+        display: flex;
+        justify-content: center;
+        gap: 80px; /* ✅ jarak antar kotak diperlebar */
+        position: relative;
+        margin-bottom: 60px; /* ✅ jarak antar level diperbesar */
+      }
+
+      .node {
+        text-align: center;
+        padding: 12px 20px;
+        background: #e65fcd;
+        border: 1px solid #a15182;
+        border-radius: 6px;
+        min-width: 140px;
+        z-index: 1;
+      }
+
+      .merge-line {
+        position: absolute;
+        top: 100%;
+        height: 2px;
+        background: #333;
+        width: calc(100% - 40px);
+        left: 20px;
+      }
+
+      .down-line {
+        position: absolute;
+        top: calc(100% + 2px);
+        left: 50%;
+        width: 2px;
+        height: 40px; /* ✅ garis vertikal lebih panjang */
+        background: #333;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Visualisasi Family Tree Zahra Hamdan Fauziyah</h1>
+
+    <div class="tree">
+      <!-- Level Orang Tua -->
+      <div class="level" id="parents">
+        <div class="node">Hendra</div>
+        <div class="node">Ani</div>
+        <div class="merge-line"></div>
+        <div class="down-line"></div>
+      </div>
+
+      <!-- Level Anak -->
+      <div class="level">
+        <div class="node">Zahra Hamdan Fauziyah</div>
+      </div>
+    </div>
+  </body>
+</html>
